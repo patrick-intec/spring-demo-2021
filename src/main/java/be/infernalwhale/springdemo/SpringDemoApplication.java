@@ -19,7 +19,5 @@ public class SpringDemoApplication {
         ApplicationContext context =
             SpringApplication.run(SpringDemoApplication.class, args);
 
-        PizzaService pizzaService = context.getBean(PizzaService.class);
-        pizzaService.checkOvens();
     }
 }

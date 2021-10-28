@@ -1,23 +1,25 @@
 package be.infernalwhale.springdemo.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import javax.annotation.PostConstruct;
 
 @Component
 public class PizzaService {
-    @Autowired
-    private List<Oven> ovens;
+    private Oven oven;
 
-    public PizzaService() {
-        System.out.println("Creating Pizza Service -> " + ovens);
+    @Value("${hello}")
+    private String hello;
+
+    public PizzaService(Oven oven) {
+        System.out.println("Creating Pizza Service");
+        this.oven = oven;
     }
 
-    public void checkOvens() {
-        System.out.println(ovens.size());
-
-        ovens.forEach(oven -> oven.bakePizza());
+    @PostConstruct
+    public void startup() {
+        System.out.println(hello);
     }
 
 }
