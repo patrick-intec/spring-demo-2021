@@ -6,7 +6,7 @@ import be.infernalwhale.springdemo.service.PizzaService;
 import be.infernalwhale.springdemo.service.StoneOven;
 import org.springframework.context.annotation.*;
 
-@Configuration
+//@Configuration
 public class BeanFactory {
     @Bean
     public ElectricalOven createElectricalOven() {
@@ -33,7 +33,7 @@ public class BeanFactory {
 
     @Bean
     public PizzaService createPizzaService() {
-        return new PizzaService(createStoneOven());
+        return new PizzaService();
     }
 
     private void internalMethod() {

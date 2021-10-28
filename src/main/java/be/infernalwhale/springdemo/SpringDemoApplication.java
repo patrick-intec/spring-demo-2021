@@ -1,5 +1,6 @@
 package be.infernalwhale.springdemo;
 
+import be.infernalwhale.springdemo.service.PizzaService;
 import be.infernalwhale.springdemo.service.StoneOven;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,10 +18,7 @@ public class SpringDemoApplication {
         ApplicationContext context =
             SpringApplication.run(SpringDemoApplication.class, args);
 
-        StoneOven o1 = context.getBean(StoneOven.class);
-        StoneOven o2 = context.getBean(StoneOven.class);
-
-        System.out.println(o1 == o2);
-
+        PizzaService pizzaService = context.getBean(PizzaService.class);
+        pizzaService.checkOven();
     }
 }
