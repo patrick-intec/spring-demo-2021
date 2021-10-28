@@ -1,10 +1,10 @@
 package be.infernalwhale.springdemo.service;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-//@Component
-//@Primary
+@Component
+@Order(2)
 public class ElectricalOven implements Oven {
     public ElectricalOven() {
         System.out.println("Creating Electrical Oven");

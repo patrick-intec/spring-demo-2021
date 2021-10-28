@@ -31,10 +31,10 @@ public class BeanFactory {
         else return new StoneOven();
     }
 
-    @Bean
-    public PizzaService createPizzaService() {
-        return new PizzaService();
-    }
+//    @Bean
+//    public PizzaService createPizzaService() {
+//        return new PizzaService();
+//    }
 
     private void internalMethod() {
         // This method is not used by spring
