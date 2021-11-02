@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SubscriberB {
     @EventListener
-    public void listenToEvent(DataEvent event) {
+    public void listenToEvent(RequestEvent event) {
         System.out.println("SubscriberB: " + event.getSource());
     }
 }

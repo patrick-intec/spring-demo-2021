@@ -16,6 +16,6 @@ public class Publisher {
 
     public void sendEvent() {
         System.out.println("Sending event");
-        eventPublisher.publishEvent(new DataEvent("Publisher created... Hello from the publisher.."));
+        eventPublisher.publishEvent(new RequestEvent("A requestEvent... Let's see who's listening"));
     }
 }
