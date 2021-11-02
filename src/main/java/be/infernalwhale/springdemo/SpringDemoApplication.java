@@ -1,5 +1,6 @@
 package be.infernalwhale.springdemo;
 
+import be.infernalwhale.springdemo.pubsub.Publisher;
 import be.infernalwhale.springdemo.service.PizzaService;
 import be.infernalwhale.springdemo.service.StoneOven;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +19,9 @@ public class SpringDemoApplication {
         // which holds all the defined beans
         ApplicationContext context =
             SpringApplication.run(SpringDemoApplication.class, args);
+
+        Publisher pub = context.getBean(Publisher.class);
+        pub.sendEvent();
 
     }
 }
